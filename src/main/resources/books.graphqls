@@ -1,0 +1,36 @@
+schema {
+ query: Query  
+ mutation : Mutation
+}
+scalar Long
+
+type Book {
+  bookId: String
+  title: String
+  publisher: String
+  authors: String
+  publishedDate: String
+}
+
+type Query {
+	getBook(bookId : String) : Book
+ 	getAllBookByAuthor(authorName : String): [Book]
+ 	getAllBook : [Book]
+}
+type Mutation{
+	saveBookDetail(bookInputReq : BookInputReq): String
+}
+
+input BookInputReq {
+	id: Long
+  bookId: String
+  title: String
+  publisher: String
+  authors: String
+  publishedDate: String
+}
+
+
+
+
+
